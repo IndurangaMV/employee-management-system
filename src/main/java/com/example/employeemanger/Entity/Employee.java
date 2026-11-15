@@ -1,5 +1,5 @@
 
-package com.example.employeemanager.model;
+package com.example.employeemanger.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

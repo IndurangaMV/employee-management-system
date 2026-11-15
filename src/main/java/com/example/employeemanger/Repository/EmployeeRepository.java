@@ -1,7 +1,7 @@
 
 package com.example.employeemanger.Repository;
 
-import com.example.employeemanager.model.Employee;
+import com.example.employeemanger.Entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
