@@ -1,7 +1,7 @@
 
 package com.example.employeemanger.Service;
 
-import com.example.employeemanager.model.Employee;
+import com.example.employeemanger.Entity.Employee;
 import com.example.employeemanger.Repository.EmployeeRepository;
 
 import org.springframework.stereotype.Service;
