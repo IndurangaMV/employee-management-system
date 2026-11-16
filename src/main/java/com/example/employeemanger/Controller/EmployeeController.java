@@ -22,6 +22,10 @@ public class EmployeeController {
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/employees";
+    }
     @GetMapping("/employees")
     public String listEmployees(Model model) {
 
@@ -76,7 +80,7 @@ public class EmployeeController {
             model.addAttribute("employee", employee.get());
             model.addAttribute("employees", employeeService.getAllEmployees());
 
-            return "employees";
+            return "edit-employee";
         }
 
         return "redirect:/employees";
@@ -112,9 +116,8 @@ public class EmployeeController {
         }
 
         if (result.hasErrors()) {
-            model.addAttribute("employees", employeeService.getAllEmployees());
             employee.setId(id);
-            return "employees";
+            return "edit-employee";
         }
 
         employee.setId(id);
