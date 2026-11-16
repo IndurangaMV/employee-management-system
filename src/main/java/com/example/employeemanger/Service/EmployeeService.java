@@ -48,4 +48,8 @@ public class EmployeeService {
     public Optional<Employee> findByEmail(String email) {
         return employeeRepository.findByEmail(email);
     }
+
+    public List<Employee> searchEmployees(String keyword) {
+        return employeeRepository.findByFullNameContainingIgnoreCase(keyword);
+    }
 }

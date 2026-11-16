@@ -276,10 +276,27 @@
 
     </div>
 
+
     <!-- Employee Table -->
     <div class="card">
 
         <h2>Employee Records</h2>
+
+        <form th:action="@{/employees/search}" method="get">
+
+            <input
+                    type="text"
+                    name="keyword"
+                    placeholder="Search employees by name..."
+                    th:value="${keyword}"
+                    required
+            >
+
+            <button type="submit">Search</button>
+
+            <a th:href="@{/employees}">Clear</a>
+
+        </form>
 
         <div class="table-wrapper">
 

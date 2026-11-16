@@ -154,4 +154,17 @@ public class EmployeeController {
 
         return "redirect:/employees";
     }
+    @GetMapping("/employees/search")
+    public String searchEmployees(
+            @RequestParam("keyword") String keyword,
+            Model model) {
+
+        List<Employee> employees = employeeService.searchEmployees(keyword);
+
+        model.addAttribute("employees", employees);
+        model.addAttribute("employee", new Employee());
+        model.addAttribute("keyword", keyword);
+
+        return "employees";
+    }
 }
